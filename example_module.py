@@ -1,4 +1,4 @@
-from papumodule import register_handler, stop_registering
+from papumodule import register_handler
 class Module:
     name = 'example_module' # m/example_module
     requirements = [] # if you need something from pypi, just type it here
@@ -12,7 +12,6 @@ class Module:
         await register_handler(self.help, commands=['help'])
         await register_handler(self.hello, commands=['hello'])
         await register_handler(self.unknown) # no handlers = m/example_module
-        await stop_registering() # end of init_module
     async def help(self, message): # usage: m/example_module help
         await message.reply('nope.') # aiogram
     async def hello(self, message): 
