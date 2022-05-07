@@ -10,7 +10,7 @@ class Module:
         await register_handler(self.help, commands=['help'])
         await register_handler(self.hello, commands=['hello'])
         await register_handler(self.unknown) # no handlers = m/example_module
-    async def import_requirements(): # there are no requirements
+    async def import_requirements(self): # there are no requirements
         # but if they were:
         # import numpy
         pass
