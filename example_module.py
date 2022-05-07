@@ -7,8 +7,7 @@ class Module:
     
     async def init_module(self): # not __init__, cause it needs to be async
         # first arg is function, which is going to be called, after getting a message
-        # after first arg there are aiogram filters, BUT
-        # you cannot use command_prefix
+        # after first arg there are papu_filters. They're going to be described in readme
         await register_handler(self.help, commands=['help'])
         await register_handler(self.hello, commands=['hello'])
         await register_handler(self.unknown) # no handlers = m/example_module
