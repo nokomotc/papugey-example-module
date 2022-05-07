@@ -4,12 +4,12 @@ class Module:
     requirements = [] # if you need something from pypi, just type it here
     # requirements = ['numpy']
     
-    async def init_module(self): # not __init__, cause it needs to be async
+    def __init__(self):
         # first arg is function, which is going to be called, after getting a message
         # after first arg there are papu_filters. They're going to be described in readme
-        await register_handler(self.help, commands=['help'])
-        await register_handler(self.hello, commands=['hello'])
-        await register_handler(self.unknown) # no handlers = m/example_module
+        register_handler(self.help, commands=['help'])
+        register_handler(self.hello, commands=['hello'])
+        register_handler(self.unknown) # no handlers = m/example_module
     def import_requirements(self): # there are no requirements
         # but if they were:
         # import numpy
@@ -25,3 +25,4 @@ class Module:
 # m/{name} {command_name} {arguments}
 # like:
 # m/example_module hello_name Mike
+
