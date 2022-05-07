@@ -3,7 +3,6 @@ class Module:
     name = 'example_module' # m/example_module
     requirements = [] # if you need something from pypi, just type it here
     # requirements = ['numpy']
-    # but don't import the module via python's default import
     
     async def init_module(self): # not __init__, cause it needs to be async
         # first arg is function, which is going to be called, after getting a message
@@ -11,6 +10,10 @@ class Module:
         await register_handler(self.help, commands=['help'])
         await register_handler(self.hello, commands=['hello'])
         await register_handler(self.unknown) # no handlers = m/example_module
+    async def import_requirements(): # there are no requirements
+        # but if they were:
+        # import numpy
+        pass
     async def help(self, message): # usage: m/example_module help
         await message.reply('nope.') # aiogram
     async def hello(self, message): 
