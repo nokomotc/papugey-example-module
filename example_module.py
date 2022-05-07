@@ -1,5 +1,5 @@
-from papumodule import Papumodule, register_handler
-class Module(Papumodule):
+from papumodule import register_handler
+class Module:
     name = 'example_module' # m/example_module
     requirements = [] # if you need something from pypi, just type it here
     # requirements = ['numpy']
