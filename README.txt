@@ -7,10 +7,6 @@ papugey filters (only kwargs):
 
 commands (list of str): m/name COMMAND args
 
-type (list of str): type of message, that is accepted by the handler\
-
-can be found in aiogram.types
-
 fs (list of functions): filters
 
 fs example (you can't check admin rights like that, but imagine you can)
