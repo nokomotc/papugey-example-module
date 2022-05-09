@@ -12,6 +12,7 @@ class Module:
         register_handler(self.unknown) # no handlers = m/example_module
     def import_requirements(self): # there are no requirements
         # but if they were:
+        # global numpy # to make import be global
         # import numpy
         pass
     async def help(self, message): # usage: m/example_module help
