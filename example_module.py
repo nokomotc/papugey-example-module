@@ -7,9 +7,12 @@ class Module:
     def __init__(self):
         # first arg is function, which is going to be called, after getting a message
         # after first arg there are papu_filters. They're going to be described in readme
-        register_handler(self.help, commands=['help'])
+        register_handler(self.help, commands=['help'], fs=[self.homemade_filter]) # applying the filter
         register_handler(self.hello, commands=['hello'])
         register_handler(self.unknown) # no handlers = m/example_module
+    def homemade_filter(self, message):
+        # The command with this filter won't work if user's first name starts with 'a' or 'A'
+        return False if message.from_user.first_name.lower().startswith('a') else True 
     def import_requirements(self): # there are no requirements
         # but if they were:
         # global numpy # to make import be global
