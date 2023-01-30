@@ -12,7 +12,7 @@ class Module:
         register_handler(self.unknown) # no handlers = m/example_module
     async def homemade_filter(self, message):
         # The command with this filter won't work if user's first name starts with 'a' or 'A'
-        return False if message.from_user.first_name.lower().startswith('a') else True 
+        return message.from_user.first_name.lower().startswith('a')
     def import_requirements(self): # there are no requirements
         # but if they were:
         # global numpy # to make import be global
